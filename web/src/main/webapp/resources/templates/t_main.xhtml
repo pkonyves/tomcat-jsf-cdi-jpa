@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:icecore="http://www.icefaces.org/icefaces/core"
+	xmlns:ace="http://www.icefaces.org/icefaces/components"
+	xmlns:ice="http://www.icesoft.com/icefaces/component">
+
+<h:head>
+	<h:outputStylesheet library="css" name="style.css" />
+	<script type="text/javascript"
+		src="http://code.jquery.com/jquery-1.9.1.js" />
+	<script type="text/javascript"
+		src="http://code.jquery.com/ui/1.10.3/jquery-ui.js" />
+	<h:outputScript library="js" name="bootstrap.js" />
+	<h:outputScript library="js" name="teamcompetition.js" />
+	<h:outputStylesheet library="css" name="bootstrap.css" />
+</h:head>
+<h:body>
+	<ui:debug />
+	<h:panelGroup id="page" border="1" layout="block" styleClass="layout">
+		<h:panelGroup id="north" layout="block" styleClass="row">
+			<h:panelGroup layout="block" styleClass="span14">
+				<ui:insert name="header">
+				</ui:insert>
+			</h:panelGroup>
+		</h:panelGroup>
+
+		<h:panelGroup id="middle" layout="block" styleClass="row">
+			<h:panelGroup id="west" layout="block" styleClass="span3">
+
+				<ui:insert name="west">
+					
+				</ui:insert>
+
+			</h:panelGroup>
+
+			<h:panelGroup id="center" layout="block" styleClass="span11">
+				<ui:insert name="main">
+					<h:outputText value="Center" />
+				</ui:insert>
+			</h:panelGroup>
+
+		</h:panelGroup>
+		<h:panelGroup id="south" layout="block" styleClass="row">
+			
+		</h:panelGroup>
+
+	</h:panelGroup>
+</h:body>
+</html>

@@ -1,0 +1,24 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+repositories { mavenCentral(); }
+
+configurations {
+	provided
+}
+dependencies {
+	provided project(':persistence');
+	
+	// below two are provided by the container or WEB
+	provided group:'org.hibernate.javax.persistence', name:'hibernate-jpa-2.0-api', version:'1.0.1.Final';
+	provided group: 'org.jboss.weld', name: 'weld-api', version: '1.1.Final';
+}
+
+sourceSets {
+	main { compileClasspath += configurations.provided }
+}
+
+eclipse {
+	classpath {
+		plusConfigurations += configurations.provided
+	}
+}

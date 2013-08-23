@@ -1,0 +1,26 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+repositories { mavenCentral(); }
+
+configurations {
+	provided
+}
+
+dependencies {
+	// provided by either the web layer of it is in the container's lib folder
+	// provided group: 'org.eclipse.persistence', name: 'org.eclipse.persistence.jpa', version: '2.5.0', ext:'jar';
+	
+	// API for compile time	
+	provided group:'org.hibernate.javax.persistence', name:'hibernate-jpa-2.0-api', version:'1.0.1.Final', ext: 'jar';
+	provided group:'org.hibernate.java-persistence', name:'jpa-api', version:'2.0-cr-1', ext: 'jar';
+}
+
+sourceSets {
+	main { compileClasspath += configurations.provided }
+}
+
+eclipse {
+	classpath {
+		plusConfigurations += configurations.provided
+	}
+}

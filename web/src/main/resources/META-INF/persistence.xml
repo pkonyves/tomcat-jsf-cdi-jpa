@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+ <persistence-unit name="banana-pu" transaction-type="RESOURCE_LOCAL">
+  <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+   <class>hu.palkonyves.persistence.entities.Banana</class>
+   <!--.....list all entities         -->
+   <properties>
+        <!-- there is no need for JNDI customization for a direct connection -->
+        <!-- property name="eclipselink.session.customizer" value="org.eclipse.persistence.example.unified.integration.JPAEclipseLinkSessionCustomizer"/-->        
+        <property name="eclipselink.target-database" value="org.eclipse.persistence.platform.database.H2Platform" />
+            
+        <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+        <property name="javax.persistence.jdbc.url" value="jdbc:h2:~/test"/>
+        <property name="javax.persistence.jdbc.user" value="sa"/>
+        <property name="javax.persistence.jdbc.password" value="sa"/>
+ 
+    <property name="eclipselink.logging.level" value="FINEST"/> 
+    <!-- uncomment the following once - if you wish to have your database tables created by EclipseLink -->
+           
+    <property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
+    <property name="eclipselink.ddl-generation.output-mode" value="database"/>
+   </properties>
+ </persistence-unit>
+ </persistence>

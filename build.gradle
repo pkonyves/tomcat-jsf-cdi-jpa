@@ -1,0 +1,12 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'ear'
+apply plugin: 'war'
+repositories { mavenCentral(); }
+
+task projects << { task ->
+	task.project.subprojects.each { subproject ->
+		println "$subproject.name";
+	}	
+}
+
